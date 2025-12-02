@@ -1,4 +1,4 @@
-import css from "/Notification.module.css";
+import css from "./Notification.module.css";
 
 interface NotificationProps {
     canNotify: boolean;
