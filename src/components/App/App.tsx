@@ -40,16 +40,20 @@ export default function App() {
         canReset={totalVotes > 0}
       >
       </VoteOptions>
-      <VoteStats
-        votes={votes}
-        totalVotes={totalVotes}
-        positiveRate={positiveRate}
-        canVoteStats={totalVotes > 0}
-      ></VoteStats>
-      <Notification
-      canNotify={totalVotes === 0}
-      ></Notification>
+      {totalVotes > 0 ? (
+        <VoteStats
+          votes={votes}
+          totalVotes={totalVotes}
+          positiveRate={positiveRate}
+        ></VoteStats>) : (<Notification></Notification>)}
+
     </div>
 
   );
 }
+
+// <VoteStats
+//   votes={votes}
+//   totalVotes={totalVotes}
+//   positiveRate={positiveRate}
+// ></VoteStats>

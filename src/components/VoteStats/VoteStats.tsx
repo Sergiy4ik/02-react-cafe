@@ -1,21 +1,15 @@
 import styles from "./VoteStats.module.css";
+import type { Votes } from "../../types/votes";
 
 interface VoteStatsProps {
-    votes: {
-        good: number;
-        neutral: number;
-        bad: number;
-    }
+    votes: Votes;
     totalVotes: number;
     positiveRate: number;
-    canVoteStats: boolean;
 }
 
-export default function VoteStats({ votes, totalVotes, positiveRate, canVoteStats }: VoteStatsProps) {
+export default function VoteStats({ votes, totalVotes, positiveRate }: VoteStatsProps) {
 
     return (
-        <>
-            {canVoteStats && (
                 <div className={styles.container}>
                     <p className={styles.stat}>Good: <strong>{votes.good}</strong></p>
                     <p className={styles.stat}>Neutral: <strong>{votes.neutral}</strong></p>
@@ -23,7 +17,5 @@ export default function VoteStats({ votes, totalVotes, positiveRate, canVoteStat
                     <p className={styles.stat}>Total: <strong>{totalVotes}</strong></p>
                     <p className={styles.stat}>Positive: <strong>{positiveRate}%</strong></p>
                 </div>
-            )}
-        </>
-    )
+            )
 }

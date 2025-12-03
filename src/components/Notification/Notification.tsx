@@ -1,14 +1,9 @@
 import css from "./Notification.module.css";
 
-interface NotificationProps {
-    canNotify: boolean;
-}
 
-export default function Notification({ canNotify }: NotificationProps) {
+export default function Notification() {
     return (
-        <>
-            {canNotify ? <p className={css.message}>No feedback yet</p> : null}
-        </>
+        <p className={css.message}>No feedback yet</p>
     );
 
 }
